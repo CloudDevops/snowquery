@@ -19,9 +19,9 @@ comm -23 <( sort hosts_list_$zone|uniq ) <( sort good_hosts_$zone| uniq ) > host
 
 done
 
-cat hosts_bad_* > all_bad_hosts
-cat good_hosts_* > all_good_hosts
-cat hosts_list* > all_hosts_list
+cat hosts_bad_* >> all_bad_hosts
+cat good_hosts_* >> all_good_hosts
+cat hosts_list* >> all_hosts_list
 rm hosts_bad_* hosts_list_* good_hosts_*
 
  files=( output hosts_zone.txt hosts1_zone.txt )
