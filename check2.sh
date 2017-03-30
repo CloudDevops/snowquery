@@ -9,7 +9,7 @@ python import2.py $zone > hosts.txt
   # echo $zone
 # export zone
 
-cat hosts.txt| tr ' ' ',' > hosts1.txt
+cat hosts.txt| tr '\n' ',' > hosts1.txt
 { printf "nodegroups:\n nodes: L@" ; cat hosts1.txt ; } > /etc/salt/master.d/nodegroups.conf
 
 salt -N nodes test.ping > output
